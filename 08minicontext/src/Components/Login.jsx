@@ -13,7 +13,7 @@ function Login() {
     const handlesubmit = (e) =>{
             e.preventDefault()
             setuser({username,pass})
-            
+
     }
 
 
@@ -25,15 +25,11 @@ function Login() {
             onChange={(e) => setusername(e.target.value)}
             placeholder='username'/>
 
-
             {"   "}
             <input type="text" 
             value={pass}
             onChange={(e) => setpass(e.target.value)}
             placeholder='password'/>
-
-
-
 
             <button onClick={handlesubmit}>Submit</button>
         </div>
