@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import {InputBox} from './components'
-import useCurrencyInfo from './hooks/useCurrencyInfo'
+import InputBox from './components/InputBox'
+import CurrencyInfo from './hooks/useCurrencyInfo'
+
 
 
 function App() {
@@ -11,9 +12,13 @@ function App() {
   
   const [convertedAmount, setConvertedAmount] = useState(0)
 
-  const currencyInfo = useCurrencyInfo(from)
 
-  const options = Object.keys(currencyInfo)
+  //function ko bhi import karke use kar sakte hai kya ?
+  const currencyInfo = CurrencyInfo(from)
+
+
+
+  const options = Object.keys(CurrencyInfo)
 
  
   
@@ -47,8 +52,7 @@ function App() {
                         e.preventDefault();
                       
                         convert()
-                       
-                        
+
                     }}
                 >
                     <div className="w-full mb-1">
